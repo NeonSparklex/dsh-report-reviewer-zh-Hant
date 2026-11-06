@@ -1,0 +1,7 @@
+node_modules/
+reviews/
+.report-review/
+test/tmp/
+*.log
+*.pdf
+.DS_Store

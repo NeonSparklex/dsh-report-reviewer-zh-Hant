@@ -1,0 +1,6 @@
+﻿# Mount the report-review host plugin. The skill, team tools, and the
+# authenticated panel-state route are registered by this row.
+- insert:
+    - id: report-reviewer-zh-hant
+      name: 'dsh-report-reviewer-zh-hant'
+      config: {}

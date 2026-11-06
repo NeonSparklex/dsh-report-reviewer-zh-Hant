@@ -1,0 +1,61 @@
+{
+  "name": "dsh-report-reviewer-zh-hant",
+  "version": "0.3.0",
+  "private": true,
+  "description": "DeepSeek Harness 報告評審外掛：結構摘要、錯誤掃描、客戶/技術改進建議，自訂團隊執行環境和右側任務面板。",
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib/**/*.js",
+    "skill/*.md",
+    "roles/*.md",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node test/state.test.mjs && node test/runtime.test.mjs && node test/tools.test.mjs",
+    "check": "node --check index.js && node --check client.js && node --check lib/state.js && node --check lib/tools.js && node --check lib/route.js && node --check lib/roles.js"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "pentest-report",
+    "report-review",
+    "proofreading",
+    "agent-teams"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
